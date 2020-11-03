@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-   This is the module of the base_models.
+    This is the module of the BaseModel class.
+    Which will be used as a Base class for AirBnb specific classes
 """
 from uuid import uuid4
 from datetime import datetime
@@ -8,32 +9,40 @@ from datetime import datetime
 
 class BaseModel():
     """
-       Define BaseModel class.
+        Define BaseModel class.
     """
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """
-           Contructor.
+            Initialisation method
         """
-        self.id = str(uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        if kwargs:
+            for key, value in kwargs.items():
+                if key == 'created_at' or key == 'updated_at':
+                    val = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+                    setattr(self, key, val)
+                elif key != '__class__':
+                    setattr(self, key, value)
+        else:
+            self.id = str(uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """
-           special method.
+            String representation of class instance method
         """
         name = self.__class__.__name__
         return "[{0}] ({1}) {2}".format(name, self.id, self.__dict__)
 
     def save(self):
         """
-           Update date.
+            Method to update date.
         """
         self.updated_at = datetime.now()
 
     def to_dict(self):
         """
-           Return dictionary.
+            Method to return dictionary.
         """
         name = self.__class__.__name__
         New_dict = self.__dict__.copy()
