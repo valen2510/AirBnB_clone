@@ -4,6 +4,7 @@ Unitest class File_Storage
 """
 import unittest
 import json
+import pep8
 import os.path
 from models.engine.file_storage import FileStorage, __doc__ as mrdoc
 import inspect
@@ -46,7 +47,7 @@ class TestFileStorage(unittest.TestCase):
         Tests for PEP-8
         """
         pep8style = pep8.StyleGuide(quiet=True)
-        result = pep8style.check_files(["models/base_model.py"])
+        result = pep8style.check_files(["models/engine/file_storage.py"])
         self.assertEqual(result.total_errors, 0)
 
     def test_docstring_for_test(self):
