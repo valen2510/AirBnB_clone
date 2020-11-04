@@ -3,6 +3,7 @@
     Console module
 """
 
+
 import cmd
 
 
