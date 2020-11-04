@@ -9,6 +9,12 @@ from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 from datetime import datetime
 import cmd
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
@@ -16,7 +22,7 @@ class HBNBCommand(cmd.Cmd):
         Define HBNBCommand class for interactive console
     """
     prompt = "(hbnb) "
-    all_classes = ['BaseModel', 'User']
+    all_classes = ['BaseModel', 'User', 'Place', 'State', 'City', 'Amenity', 'Review']
 
     def do_quit(self, args):
         """
