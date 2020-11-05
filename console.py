@@ -135,21 +135,16 @@ class HBNBCommand(cmd.Cmd):
                     print("** value missing **")
                     return
                 else:
-                    string = ""
-                    if '"' in arguments_list[3]:
-                        for i in arguments_list[3:]:
-                            if i[-1] == '"':
-                                string += str(i)
-                            else:
-                                string += str(i) + " "
-                        arguments_list[3] = string
                     try:
                         value = int(arguments_list[3].replace('"', ""))
                     except:
                         try:
                             value = float(arguments_list[3].replace('"', ""))
                         except:
-                            pass
+                            try:
+                                value = str(arguments_list[3].replace('"', ""))
+                            except:
+                                pass
                     obj.__dict__[arguments_list[2]] = value
                     models.storage.save()
                     return
