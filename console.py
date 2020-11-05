@@ -19,10 +19,11 @@ from models.review import Review
 
 class HBNBCommand(cmd.Cmd):
     """
-        Define HBNBCommand class for interactive console
+        Define HBNBCommand class for console
     """
     prompt = "(hbnb) "
-    all_classes = ['BaseModel', 'User', 'Place', 'State', 'City', 'Amenity', 'Review']
+    all_classes = ['BaseModel', 'User', 'Place', 'State',
+                   'City', 'Amenity', 'Review']
 
     def do_quit(self, args):
         """
@@ -52,16 +53,16 @@ class HBNBCommand(cmd.Cmd):
         """Creates a new instance in all_classes, saves it to the JSON file
             and prints the id
         """
-        if len(args) < 2:
-            print('* class name missing *')
-        else:
-            try:
-                new = eval(args)()
-                new.save()
-                print(new.id)
-            except (NameError, SyntaxError):
-                print("* class doesn't exist *")
-                pass
+        arguments_list = args.split()
+        if len(arguments_list) == 0:
+            print('** class name missing **')
+            return
+        try:
+            dummy = eval(arguments_list[0] + '()')
+            dummy.save()
+            print(dummy.id)
+        except:
+            print("** class doesn't exist **")
 
     def do_show(self, args):
         """Prints the string representation of an instance based
@@ -134,13 +135,23 @@ class HBNBCommand(cmd.Cmd):
                     print("** value missing **")
                     return
                 else:
-                    value = arguments_list[3].replace('"', "")
+                    try:
+                        value = int(arguments_list[3].replace('"', ""))
+                    except:
+                        try:
+                            value = float(arguments_list[3].replace('"', ""))
+                        except:
+                            try:
+                                value = str(arguments_list[3].replace('"', ""))
+                            except:
+                                pass
                     obj.__dict__[arguments_list[2]] = value
                     models.storage.save()
                     return
             else:
                 print("** no instace found **")
                 return
+
 
 def validate(list_args):
     """Function to validate content in list or arguments
