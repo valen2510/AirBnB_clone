@@ -19,7 +19,7 @@ from models.review import Review
 
 class HBNBCommand(cmd.Cmd):
     """
-        Define HBNBCommand class for interactive console
+        Define HBNBCommand class for interactive command line interpreter
     """
     prompt = "(hbnb) "
     all_classes = ['BaseModel', 'User', 'Place', 'State',
