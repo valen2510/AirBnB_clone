@@ -49,22 +49,19 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, args):
-        list_arg = args.strip()
-
-    def do_create(self, args):
         """Creates a new instance in all_classes, saves it to the JSON file
             and prints the id
         """
-        arguments_list = args.split()
-        if len(arguments_list) == 0:
-            print('** class name missing **')
-            return
-        try:
-            dummy = eval(arguments_list[0] + '()')
-            dummy.save()
-            print(dummy.id)
-        except:
-            print("** class doesn't exist **")
+        if len(args) < 2:
+            print('* class name missing *')
+        else:
+            try:
+                new = eval(args)()
+                new.save()
+                print(new.id)
+            except (NameError, SyntaxError):
+                print("* class doesn't exist *")
+                pass
 
     def do_show(self, args):
         """Prints the string representation of an instance based
@@ -106,7 +103,7 @@ class HBNBCommand(cmd.Cmd):
         instances = models.storage.all()
         if args:
             arg_list = args.split()
-
+            print(arg_list[0])
             if arg_list[0] not in self.all_classes:
                 print("** class doesn't exist **")
             else:
@@ -144,7 +141,6 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** no instace found **")
                 return
-
 
 def validate(list_args):
     """Function to validate content in list or arguments
