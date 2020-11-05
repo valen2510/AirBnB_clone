@@ -149,7 +149,7 @@ class HBNBCommand(cmd.Cmd):
                     models.storage.save()
                     return
             else:
-                print("** no instace found **")
+                print("** no instance found **")
                 return
 
 
