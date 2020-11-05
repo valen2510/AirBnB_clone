@@ -21,7 +21,7 @@ git clone https://github.com/valen2510/AirBnB_clone.git
 
 <p> The Console shows a prompt and wait for the BaseModel to type a command, interpretes and run the input command and display the prompt again. You can exit the console using quit command EOF or Ctrl + D.
 
-<h1>Interactive mode</h1>
+<h4>Interactive mode</h4>
 
 ```
 $ ./console.py
@@ -38,7 +38,7 @@ $
 
 ```
 
-<h1>Non-Interactive mode</h1>
+<h4>Non-Interactive mode</h4>
 
 ```
 $ echo "help" | ./console.py
@@ -91,7 +91,7 @@ $
 
 <p> 
 
-<h1>create command</h1>
+<h4>create command</h4>
 
 ```
 (hbnh) create BaseModel
@@ -106,7 +106,7 @@ $
 
 ```
 
-<h1>show command</h1>
+<h4>show command</h4>
 
 ```
 (hbnh) show BaseModel 11c736fd-9638-4124-b034-632059325fa4
@@ -121,7 +121,7 @@ $
 
 ```
 
-<h1>all command</h1>
+<h4>all command</h4>
 
 ```
 (hbnh) all
@@ -136,7 +136,7 @@ $
 
 ```
 
-<h1>update command</h1>
+<h4>update command</h4>
 
 ```
 (hbnh) update BaseModel 11c736fd-9638-4124-b034-632059325fa4 name "Betty"
@@ -149,7 +149,7 @@ $
 
 ```
 
-<h1>destroy command</h1>
+<h4>destroy command</h4>
 
 ```bash
 (hbnh) destroy BaseModel 11c736fd-9638-4124-b034-632059325fa4
@@ -167,10 +167,10 @@ $
 <h3> 🤝 Contributors</h3>
 
 <a href="https://github.com/valen2510" target="_blank">
-        <img src="https://avatars3.githubBaseModelcontent.com/u/65981858?s=400&u=917bf8544c11bfc83b5a9fd961fc72ef25e3188a&v=4" style="float: center; margin-right: 10px" height="65" width="65">
+        <img src="https://avatars3.githubusercontent.com/u/65981858?s=460&u=917bf8544c11bfc83b5a9fd961fc72ef25e3188a&v=4" style="float: center; margin-right: 10px" height="65" width="65">
 </a>
 <a href="https://github.com/epg01" target="_blank">
-        <img src="https://avatars2.githubBaseModelcontent.com/u/60383826?s=460&u=2c0d5b6ad73dd12f883d6893f95dc9efc6f34f74&v=4" style="float: center; margin-right: 10px" height="65" width="65">
+        <img src="https://avatars2.githubusercontent.com/u/60383826?s=400&u=2c0d5b6ad73dd12f883d6893f95dc9efc6f34f74&v=4" style="float: center; margin-right: 10px" height="65" width="65">
 </a>
 
 ---
