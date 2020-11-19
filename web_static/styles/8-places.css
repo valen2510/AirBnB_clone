@@ -41,7 +41,7 @@ article {
 .max_guest {
     width: 100px;
     height: 80px;
-    background: url(/images/icon_group.png) no-repeat center top;
+    background: url(../images/icon_group.png) no-repeat center top;
     display: inline-block;
 }
 .max_guest p, .number_rooms p, .number_bathrooms p {
@@ -51,14 +51,14 @@ article {
 .number_rooms {
     width: 100px;
     height: 80px;
-    background: url(/images/icon_bed.png) no-repeat center top;
+    background: url(../images/icon_bed.png) no-repeat center top;
     display: inline-block;
 
 }
 .number_bathrooms {
     width: 100px;
     height: 80px;
-    background: url(/images/icon_bath.png) no-repeat center top;
+    background: url(../images/icon_bath.png) no-repeat center top;
     display: inline-block;
 }
 .user p, .description p {
